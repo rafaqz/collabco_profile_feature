@@ -20,3 +20,20 @@ function collabco_profile_feature_ctools_plugin_api() {
 function collabco_profile_feature_views_api() {
   return array("api" => "3.0");
 }
+
+/**
+ * Implements hook_default_profile2_type().
+ */
+function collabco_profile_feature_default_profile2_type() {
+  $items = array();
+  $items['iin_kickstarter'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "iin_kickstarter",
+    "label" : "Profile",
+    "weight" : "0",
+    "data" : { "registration" : 1, "use_page" : 0 },
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
