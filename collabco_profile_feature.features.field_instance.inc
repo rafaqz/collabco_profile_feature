@@ -10,9 +10,9 @@
 function collabco_profile_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'profile2-iin_kickstarter-field_areas_of_expertise'
-  $field_instances['profile2-iin_kickstarter-field_areas_of_expertise'] = array(
-    'bundle' => 'iin_kickstarter',
+  // Exported field_instance: 'profile2-profile-field_areas_of_expertise'
+  $field_instances['profile2-profile-field_areas_of_expertise'] = array(
+    'bundle' => 'profile',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -44,9 +44,9 @@ function collabco_profile_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-iin_kickstarter-field_business_position'
-  $field_instances['profile2-iin_kickstarter-field_business_position'] = array(
-    'bundle' => 'iin_kickstarter',
+  // Exported field_instance: 'profile2-profile-field_business_position'
+  $field_instances['profile2-profile-field_business_position'] = array(
+    'bundle' => 'profile',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -104,9 +104,9 @@ function collabco_profile_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-iin_kickstarter-field_external_link'
-  $field_instances['profile2-iin_kickstarter-field_external_link'] = array(
-    'bundle' => 'iin_kickstarter',
+  // Exported field_instance: 'profile2-profile-field_external_link'
+  $field_instances['profile2-profile-field_external_link'] = array(
+    'bundle' => 'profile',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -152,9 +152,9 @@ function collabco_profile_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-iin_kickstarter-field_personal_bio'
-  $field_instances['profile2-iin_kickstarter-field_personal_bio'] = array(
-    'bundle' => 'iin_kickstarter',
+  // Exported field_instance: 'profile2-profile-field_personal_bio'
+  $field_instances['profile2-profile-field_personal_bio'] = array(
+    'bundle' => 'profile',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

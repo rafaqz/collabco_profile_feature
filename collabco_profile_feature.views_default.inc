@@ -372,7 +372,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'profile';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'iin_kickstarter' => 'iin_kickstarter',
+    'profile' => 'profile',
   );
 
   /* Display: Page */

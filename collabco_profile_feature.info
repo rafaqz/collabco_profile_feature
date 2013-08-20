@@ -23,18 +23,26 @@ features[field_base][] = field_areas_of_expertise
 features[field_base][] = field_business_position
 features[field_base][] = field_external_link
 features[field_base][] = field_personal_bio
-features[field_instance][] = profile2-iin_kickstarter-field_areas_of_expertise
-features[field_instance][] = profile2-iin_kickstarter-field_business_position
-features[field_instance][] = profile2-iin_kickstarter-field_external_link
-features[field_instance][] = profile2-iin_kickstarter-field_personal_bio
-features[profile2_type][] = iin_kickstarter
+features[field_instance][] = profile2-profile-field_areas_of_expertise
+features[field_instance][] = profile2-profile-field_business_position
+features[field_instance][] = profile2-profile-field_external_link
+features[field_instance][] = profile2-profile-field_personal_bio
+features[profile2_type][] = profile
 features[taxonomy][] = areas_of_participant_expertise
 features[views_view][] = all_users
 features[views_view][] = featured_users
 features[views_view][] = shared_capability_users
 features_exclude[dependencies][collabco_entities_feature] = collabco_entities_feature
-features_exclude[field][profile2-iin_kickstarter-field_areas_of_expertise] = profile2-iin_kickstarter-field_areas_of_expertise
-features_exclude[field][profile2-iin_kickstarter-field_business_position] = profile2-iin_kickstarter-field_business_position
-features_exclude[field][profile2-iin_kickstarter-field_external_link] = profile2-iin_kickstarter-field_external_link
-features_exclude[field][profile2-iin_kickstarter-field_organisation_ref] = profile2-iin_kickstarter-field_organisation_ref
-features_exclude[field][profile2-iin_kickstarter-field_personal_bio] = profile2-iin_kickstarter-field_personal_bio
+features_exclude[field][profile2-profile-field_areas_of_expertise] = profile2-profile-field_areas_of_expertise
+features_exclude[field][profile2-profile-field_business_position] = profile2-profile-field_business_position
+features_exclude[field][profile2-profile-field_external_link] = profile2-profile-field_external_link
+features_exclude[field][profile2-profile-field_organisation_ref] = profile2-profile-field_organisation_ref
+features_exclude[field][profile2-profile-field_personal_bio] = profile2-profile-field_personal_bio
+
+
+; Information added by drush on 2013-08-19
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "collabco_profile_feature"
+datestamp = "1376976855"
+
