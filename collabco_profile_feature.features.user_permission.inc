@@ -10,64 +10,50 @@
 function collabco_profile_feature_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: create organisation content.
-  $permissions['create organisation content'] = array(
-    'name' => 'create organisation content',
+  // Exported permission: administer profile types.
+  $permissions['administer profile types'] = array(
+    'name' => 'administer profile types',
     'roles' => array(
-      'Admin' => 'Admin',
-      'Community Moderator' => 'Community Moderator',
-      'Content Manager' => 'Content Manager',
-      'Super Admin' => 'Super Admin',
+      'administrator' => 'administrator',
     ),
-    'module' => 'node',
+    'module' => 'profile2',
   );
 
-  // Exported permission: delete any organisation content.
-  $permissions['delete any organisation content'] = array(
-    'name' => 'delete any organisation content',
+  // Exported permission: administer profiles.
+  $permissions['administer profiles'] = array(
+    'name' => 'administer profiles',
     'roles' => array(
-      'Admin' => 'Admin',
-      'Community Moderator' => 'Community Moderator',
-      'Content Manager' => 'Content Manager',
-      'Super Admin' => 'Super Admin',
+      'administrator' => 'administrator',
     ),
-    'module' => 'node',
+    'module' => 'profile2',
   );
 
-  // Exported permission: delete own organisation content.
-  $permissions['delete own organisation content'] = array(
-    'name' => 'delete own organisation content',
-    'roles' => array(
-      'Admin' => 'Admin',
-      'Community Moderator' => 'Community Moderator',
-      'Content Manager' => 'Content Manager',
-      'Super Admin' => 'Super Admin',
-    ),
-    'module' => 'node',
+  // Exported permission: edit any profile profile.
+  $permissions['edit any profile profile'] = array(
+    'name' => 'edit any profile profile',
+    'roles' => array(),
+    'module' => 'profile2',
   );
 
-  // Exported permission: edit any organisation content.
-  $permissions['edit any organisation content'] = array(
-    'name' => 'edit any organisation content',
-    'roles' => array(
-      'Admin' => 'Admin',
-      'Community Moderator' => 'Community Moderator',
-      'Content Manager' => 'Content Manager',
-      'Super Admin' => 'Super Admin',
-    ),
-    'module' => 'node',
+  // Exported permission: edit own profile profile.
+  $permissions['edit own profile profile'] = array(
+    'name' => 'edit own profile profile',
+    'roles' => array(),
+    'module' => 'profile2',
   );
 
-  // Exported permission: edit own organisation content.
-  $permissions['edit own organisation content'] = array(
-    'name' => 'edit own organisation content',
-    'roles' => array(
-      'Admin' => 'Admin',
-      'Community Moderator' => 'Community Moderator',
-      'Content Manager' => 'Content Manager',
-      'Super Admin' => 'Super Admin',
-    ),
-    'module' => 'node',
+  // Exported permission: view any profile profile.
+  $permissions['view any profile profile'] = array(
+    'name' => 'view any profile profile',
+    'roles' => array(),
+    'module' => 'profile2',
+  );
+
+  // Exported permission: view own profile profile.
+  $permissions['view own profile profile'] = array(
+    'name' => 'view own profile profile',
+    'roles' => array(),
+    'module' => 'profile2',
   );
 
   return $permissions;
