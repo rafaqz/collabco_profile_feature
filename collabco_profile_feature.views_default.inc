@@ -98,7 +98,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position']['alter']['max_length'] = '150';
   $handler->display->display_options['fields']['field_business_position']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_business_position']['element_label_colon'] = FALSE;
-  /* Field: Profile: Organisation */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_organisation_ref']['id'] = 'field_organisation_ref';
   $handler->display->display_options['fields']['field_organisation_ref']['table'] = 'field_data_field_organisation_ref';
   $handler->display->display_options['fields']['field_organisation_ref']['field'] = 'field_organisation_ref';
@@ -110,9 +110,6 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['field_organisation_ref']['alter']['max_length'] = '150';
   $handler->display->display_options['fields']['field_organisation_ref']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_organisation_ref']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_organisation_ref']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';

@@ -152,39 +152,6 @@ function collabco_profile_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-iin_kickstarter-field_organisation_ref'
-  $field_instances['profile2-iin_kickstarter-field_organisation_ref'] = array(
-    'bundle' => 'iin_kickstarter',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 10,
-      ),
-    ),
-    'entity_type' => 'profile2',
-    'field_name' => 'field_organisation_ref',
-    'label' => 'Organisation',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'profile2-iin_kickstarter-field_personal_bio'
   $field_instances['profile2-iin_kickstarter-field_personal_bio'] = array(
     'bundle' => 'iin_kickstarter',
@@ -249,7 +216,6 @@ function collabco_profile_feature_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Areas of Expertise');
   t('Business Position');
-  t('Organisation');
   t('Personal Bio');
   t('Website');
 
