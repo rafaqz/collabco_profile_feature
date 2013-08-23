@@ -23,8 +23,8 @@ function collabco_profile_feature_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'openhub' => array(
-        'region' => 'content_upper',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'openhub',
         'weight' => 0,
       ),
@@ -41,7 +41,7 @@ function collabco_profile_feature_default_fe_block_settings() {
 
   $export['views-all_users-block'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'iin-feature',
     'custom' => 0,
     'delta' => 'all_users-block',
     'module' => 'views',
@@ -50,7 +50,7 @@ function collabco_profile_feature_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'openhub' => array(
-        'region' => 'content_top',
+        'region' => 'content_lower',
         'status' => 1,
         'theme' => 'openhub',
         'weight' => 0,
