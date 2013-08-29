@@ -48,3 +48,10 @@ features_exclude[field][profile2-profile-field_business_position] = profile2-pro
 features_exclude[field][profile2-profile-field_external_link] = profile2-profile-field_external_link
 features_exclude[field][profile2-profile-field_organisation_ref] = profile2-profile-field_organisation_ref
 features_exclude[field][profile2-profile-field_personal_bio] = profile2-profile-field_personal_bio
+
+
+; Information added by drush on 2013-08-28
+version = "master-dev"
+project = "collabco_profile_feature"
+datestamp = "1377754254"
+
