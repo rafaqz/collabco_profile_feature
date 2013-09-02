@@ -53,7 +53,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['relationships']['profile']['table'] = 'users';
   $handler->display->display_options['relationships']['profile']['field'] = 'profile';
   $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
-    'iin_kickstarter' => 'iin_kickstarter',
+    'profile' => 'profile',
   );
   /* Field: User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
