@@ -2,7 +2,7 @@ name = Collabco Profile Feature
 core = 7.x
 package = Collabco
 php = 5.2.4
-version = unknown
+version = master-dev
 project = collabco_profile_feature
 dependencies[] = ctools
 dependencies[] = entity
@@ -16,7 +16,7 @@ dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views
-datestamp = 1377179617
+datestamp = 1377754254
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-301386dba33cbdacd710e75c8357d743
@@ -48,10 +48,3 @@ features_exclude[field][profile2-profile-field_business_position] = profile2-pro
 features_exclude[field][profile2-profile-field_external_link] = profile2-profile-field_external_link
 features_exclude[field][profile2-profile-field_organisation_ref] = profile2-profile-field_organisation_ref
 features_exclude[field][profile2-profile-field_personal_bio] = profile2-profile-field_personal_bio
-
-
-; Information added by drush on 2013-08-28
-version = "master-dev"
-project = "collabco_profile_feature"
-datestamp = "1377754254"
-
