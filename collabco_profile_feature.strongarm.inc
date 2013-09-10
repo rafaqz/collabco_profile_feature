@@ -13,9 +13,9 @@ function collabco_profile_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_article';
-  $strongarm->value = 'edit-submission';
-  $export['additional_settings__active_tab_article'] = $strongarm;
+  $strongarm->name = 'pathauto_taxonomy_term_areas_of_participant_expertise_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_areas_of_participant_expertise_pattern'] = $strongarm;
 
   return $export;
 }
