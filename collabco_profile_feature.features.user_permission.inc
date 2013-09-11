@@ -33,6 +33,8 @@ function collabco_profile_feature_user_default_permissions() {
     'name' => 'edit any profile profile',
     'roles' => array(
       'Admin' => 'Admin',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'profile2',
   );
