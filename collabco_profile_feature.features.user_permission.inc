@@ -28,6 +28,15 @@ function collabco_profile_feature_user_default_permissions() {
     'module' => 'profile2',
   );
 
+  // Exported permission: delete terms in 1.
+  $permissions['delete terms in 1'] = array(
+    'name' => 'delete terms in 1',
+    'roles' => array(
+      'Admin' => 'Admin',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: edit any profile profile.
   $permissions['edit any profile profile'] = array(
     'name' => 'edit any profile profile',
@@ -47,6 +56,15 @@ function collabco_profile_feature_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'profile2',
+  );
+
+  // Exported permission: edit terms in 1.
+  $permissions['edit terms in 1'] = array(
+    'name' => 'edit terms in 1',
+    'roles' => array(
+      'Admin' => 'Admin',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: view any profile profile.
