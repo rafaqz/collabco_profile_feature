@@ -12,8 +12,8 @@ function collabco_profile_feature_views_default_views() {
 
   $view = new view();
   $view->name = 'all_users';
-  $view->description = 'Shows a grid of users such as kickstarters, team members etc.';
-  $view->tag = 'default';
+  $view->description = 'Shows a grid of all users';
+  $view->tag = 'Profile Feature';
   $view->base_table = 'users';
   $view->human_name = 'All Users';
   $view->core = 7;
@@ -153,7 +153,7 @@ function collabco_profile_feature_views_default_views() {
   $view = new view();
   $view->name = 'featured_users';
   $view->description = 'Shows a grid of users such as kickstarters, team members etc.';
-  $view->tag = 'default';
+  $view->tag = 'Profile Feature';
   $view->base_table = 'users';
   $view->human_name = 'Featured Users';
   $view->core = 7;
