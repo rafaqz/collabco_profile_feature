@@ -41,7 +41,7 @@ function collabco_profile_feature_default_fe_block_settings() {
 
   $export['views-all_users-block'] = array(
     'cache' => -1,
-    'css_class' => 'iin-feature',
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'all_users-block',
     'module' => 'views',
