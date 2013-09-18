@@ -212,11 +212,79 @@ function collabco_profile_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'profile2-profile-field_profile_email'
+  $field_instances['profile2-profile-field_profile_email'] = array(
+    'bundle' => 'profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_profile_email',
+    'label' => 'Shared Email',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-profile-field_profile_phone'
+  $field_instances['profile2-profile-field_profile_phone'] = array(
+    'bundle' => 'profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'field_name' => 'field_profile_phone',
+    'label' => 'Phone Number',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'telephone',
+      'settings' => array(
+        'placeholder' => '',
+      ),
+      'type' => 'telephone_default',
+      'weight' => 8,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Areas of Expertise');
   t('Business Position');
   t('Personal Bio');
+  t('Phone Number');
+  t('Shared Email');
   t('Website');
 
   return $field_instances;
