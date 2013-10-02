@@ -12,8 +12,8 @@ function collabco_profile_feature_views_default_views() {
 
   $view = new view();
   $view->name = 'all_users';
-  $view->description = 'Shows a grid of users such as kickstarters, team members etc.';
-  $view->tag = 'default';
+  $view->description = 'Shows a grid of all users';
+  $view->tag = 'Profile Feature';
   $view->base_table = 'users';
   $view->human_name = 'All Users';
   $view->core = 7;
@@ -53,7 +53,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['relationships']['profile']['table'] = 'users';
   $handler->display->display_options['relationships']['profile']['field'] = 'profile';
   $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
-    'iin_kickstarter' => 'iin_kickstarter',
+    'profile' => 'profile',
   );
   /* Field: User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
@@ -102,20 +102,13 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_business_position']['element_label_colon'] = FALSE;
   /* Field: Profile: Organisation */
-  $handler->display->display_options['fields']['field_organisation_ref']['id'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['table'] = 'field_data_field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['field'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['relationship'] = 'profile';
-  $handler->display->display_options['fields']['field_organisation_ref']['label'] = '';
-  $handler->display->display_options['fields']['field_organisation_ref']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_organisation_ref']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_organisation_ref']['alter']['text'] = '@ [field_organisation_ref] ';
-  $handler->display->display_options['fields']['field_organisation_ref']['alter']['max_length'] = '75';
-  $handler->display->display_options['fields']['field_organisation_ref']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_organisation_ref']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_organisation_ref']['settings'] = array(
-    'link' => 0,
-  );
+  $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_organisation']['label'] = '';
+  $handler->display->display_options['fields']['field_organisation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_organisation']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -123,7 +116,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[picture]
 <h6>[field_first_name]</h6>
-<p class="p2">[field_business_position]<br/><span style=color: #000000;">[field_organisation_ref]</span></p>
+<p class="p2">[field_business_position]<br/><span style=color: #000000;">[field_organisation]</span></p>
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: User: Last Name (field_last_name) */
@@ -137,11 +130,6 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Group membership (og_user_node) */
-  $handler->display->display_options['filters']['og_user_node_target_id']['id'] = 'og_user_node_target_id';
-  $handler->display->display_options['filters']['og_user_node_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['og_user_node_target_id']['field'] = 'og_user_node_target_id';
-  $handler->display->display_options['filters']['og_user_node_target_id']['operator'] = 'empty';
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
