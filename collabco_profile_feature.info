@@ -48,6 +48,7 @@ features[user_permission][] = edit own profile profile
 features[user_permission][] = view any profile profile
 features[user_permission][] = view own profile profile
 features[views_view][] = all_users
+features[views_view][] = core_group_users
 features[views_view][] = featured_users
 features[views_view][] = shared_capability_users
 features_exclude[dependencies][collabco_entities_feature] = collabco_entities_feature
