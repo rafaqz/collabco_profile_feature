@@ -154,7 +154,10 @@ function collabco_profile_feature_block_view($delta='') {
  *   A Drupal build array.
  */
 function collabco_profile_feature_build_user_header_block() {
-  $account = user_load(1);
+  $account = menu_get_object('user',1);
+  if (empty($account)) {
+    return;
+  }
 
   // Get group title and all parent group titles.
   $title = $account->name;
