@@ -154,13 +154,16 @@ function collabco_profile_feature_block_view($delta='') {
  *   A Drupal build array.
  */
 function collabco_profile_feature_build_user_header_block() {
-  $account = menu_get_object('user',1);
+  if ((arg(0) === 'user') && is_numeric(arg(1))) {
+    // Load the user from the current path.
+    $account = user_load(arg(1));
+  }
   if (empty($account)) {
     return;
   }
 
   // Get group title and all parent group titles.
-  $title = $account->name;
+  $title = $account->realname;
 
   // Build the tab menu links.
   $path = 'user/' . $account->uid . '/';
