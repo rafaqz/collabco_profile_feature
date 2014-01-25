@@ -13,36 +13,45 @@ function collabco_profile_feature_preprocess_user_picture(&$variables) {
   $variables['user_picture'] = '';
   if (variable_get('user_pictures', 0)) {
     $account = $variables['account'];
-    if (!empty($account->picture)) {
-      if (is_numeric($account->picture)) {
-        $account->picture = file_load($account->picture);
-      }
-      if (!empty($account->picture->uri)) {
-        $filepath = $account->picture->uri;
-      }
-    }
-    elseif (variable_get('user_picture_default', '')) {
-      $filepath = variable_get('user_picture_default', '');
-    }
-    if (isset($filepath) and (!empty($account->name))) {
-      $alt = $account->name;
-      $title = $account->name;
+    $variables['user_picture'] = collabco_profile_feature_load_user_picture($account);
+  }
+}
 
-      if (module_exists('image') && file_valid_uri($filepath) && $style = variable_get('user_picture_style', '')) {
-        $variables['user_picture'] = theme('image_style', array('style_name' => $style, 'path' => $filepath, 'alt' => $alt, 'title' => $title));
-      }
-      else {
-        $variables['user_picture'] = theme('image', array('path' => $filepath, 'alt' => $alt, 'title' => $title));
-      }
-      if (!empty($account->uid) && user_access('access user profiles')) {
-        $attributes = array(
-          'attributes' => array('title' => t('View user profile.')),
-          'html' => TRUE,
-        );
-        $variables['user_picture'] = l($variables['user_picture'], "user/$account->uid", $attributes);
-      }
+/**
+ * Implements hook_preprocess_user_pricture().
+ */
+function collabco_profile_feature_load_user_picture($account) {
+  $user_picture = '';
+  if (!empty($account->picture)) {
+    if (is_numeric($account->picture)) {
+      $account->picture = file_load($account->picture);
+    }
+    if (!empty($account->picture->uri)) {
+      $filepath = $account->picture->uri;
     }
   }
+  elseif (variable_get('user_picture_default', '')) {
+    $filepath = variable_get('user_picture_default', '');
+  }
+  if (isset($filepath) and (!empty($account->name))) {
+    $alt = $account->name;
+    $title = $account->name;
+
+    if (module_exists('image') && file_valid_uri($filepath) && $style = variable_get('user_picture_style', '')) {
+      $user_picture = theme('image_style', array('style_name' => $style, 'path' => $filepath, 'alt' => $alt, 'title' => $title));
+    }
+    else {
+      $user_picture = theme('image', array('path' => $filepath, 'alt' => $alt, 'title' => $title));
+    }
+    if (!empty($account->uid) && user_access('access user profiles')) {
+      $attributes = array(
+        'attributes' => array('title' => t('View user profile.')),
+        'html' => TRUE,
+      );
+      $user_picture = l($user_picture, "user/$account->uid", $attributes);
+    }
+  }
+  return $user_picture;
 }
 
 /**
@@ -112,5 +121,81 @@ function collabco_profile_feature_views_data_alter(&$data) {
   }
 
   return $data;
+}
+
+
+/**
+ * Implements hook_block_info().
+ */
+function collabco_profile_feature_block_info() {
+  $blocks = array(
+    'user_header' => array(
+      'info' => t('User Header'),
+    ),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function collabco_profile_feature_block_view($delta='') {
+  switch($delta) {
+    case 'user_header' :
+      $block = collabco_profile_feature_build_user_header_block();
+      return $block;
+  }
+} 
+
+/**
+ * Build a group header block.
+ *
+ * @return array
+ *   A Drupal build array.
+ */
+function collabco_profile_feature_build_user_header_block() {
+  $account = user_load(1);
+
+  // Get group title and all parent group titles.
+  $title = $account->name;
+
+  // Build the tab menu links.
+  $path = 'user/' . $account->uid . '/';
+  $subpaths = array('Profile' => ''); 
+  $tabs = collabco_settings_feature_tabs_integration($path, $subpaths);
+
+  // Build the block render array.
+  $block = array();
+  $block['content'] = array(
+    'header-banner' => array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('header-banner', 'user')),
+      'header-details' => array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('header-details')),
+        'header-details-main' => array(
+          '#type' => 'container',
+          '#attributes' => array('class' => array('header-details-main')),
+          'title' => array(
+            '#type' => 'markup',
+            '#markup' => $title,
+            '#weight' => 0,
+            '#prefix' => '<h1>',
+            '#suffix' => '</h1>'
+          ),
+        ),
+        'header-details-side' => array(
+          '#type' => 'container',
+          '#attributes' => array('class' => array('header-details-side')),
+          'picture' => array(
+            '#type' => 'markup',
+            '#markup' => collabco_profile_feature_load_user_picture($account),
+          ),
+        ),
+      ),
+      'header-content-tab' => $tabs,
+    ),
+  );
+  return $block;
 }
 
