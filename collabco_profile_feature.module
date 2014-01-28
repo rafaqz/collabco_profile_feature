@@ -166,7 +166,7 @@ function collabco_profile_feature_build_user_header_block() {
   $title = $account->realname;
 
   // Build the tab menu links.
-  $path = 'user/' . $account->uid . '/';
+  $path = 'user/' . $account->uid;
   $subpaths = array('Profile' => ''); 
   $tabs = collabco_settings_feature_tabs_integration($path, $subpaths);
 
