@@ -164,6 +164,9 @@ function collabco_profile_feature_build_user_header_block() {
 
   // Get group title and all parent group titles.
   $title = $account->realname;
+  if (empty($title)) {
+    $title = $account->name;
+  }
 
   // Build the tab menu links.
   $path = 'user/' . $account->uid;
@@ -185,7 +188,7 @@ function collabco_profile_feature_build_user_header_block() {
           'title' => array(
             '#type' => 'markup',
             '#markup' => $title,
-            '#weight' => 0,
+            '#weight' => 1,
             '#prefix' => '<h1>',
             '#suffix' => '</h1>'
           ),
@@ -196,6 +199,7 @@ function collabco_profile_feature_build_user_header_block() {
           'picture' => array(
             '#type' => 'markup',
             '#markup' => collabco_profile_feature_load_user_picture($account),
+            '#weight' => 0,
           ),
         ),
       ),
