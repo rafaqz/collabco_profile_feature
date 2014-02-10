@@ -185,6 +185,11 @@ function collabco_profile_feature_build_user_header_block() {
         'header-details-main' => array(
           '#type' => 'container',
           '#attributes' => array('class' => array('header-details-main')),
+          'picture' => array(
+            '#type' => 'markup',
+            '#markup' => collabco_profile_feature_load_user_picture($account),
+            '#weight' => 0,
+          ),
           'title' => array(
             '#type' => 'markup',
             '#markup' => $title,
@@ -196,16 +201,24 @@ function collabco_profile_feature_build_user_header_block() {
         'header-details-side' => array(
           '#type' => 'container',
           '#attributes' => array('class' => array('header-details-side')),
-          'picture' => array(
-            '#type' => 'markup',
-            '#markup' => collabco_profile_feature_load_user_picture($account),
-            '#weight' => 0,
-          ),
         ),
       ),
       'header-content-tab' => $tabs,
     ),
   );
   return $block;
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function collabco_profile_feature_preprocess_page(&$vars) {
+  // show_title is true by default, unless it's allready set.
+  if (!isset($vars['show_title'])) { 
+    $vars['show_title'] = TRUE; 
+  }
+  if (isset($vars['user'])) {
+    $vars['show_title'] = FALSE; 
+  }
 }
 
