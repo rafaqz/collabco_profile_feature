@@ -23,7 +23,7 @@ function collabco_profile_feature_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'custom_zurb' => array(
-        'region' => 'featured',
+        'region' => 'header',
         'status' => 1,
         'theme' => 'custom_zurb',
         'weight' => 0,
