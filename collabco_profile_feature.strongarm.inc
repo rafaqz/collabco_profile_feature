@@ -44,7 +44,7 @@ function collabco_profile_feature_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -61,15 +61,27 @@ function collabco_profile_feature_strongarm() {
             'weight' => '3',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
         ),
         'profile_profile' => array(
           'default' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
         'summary' => array(
           'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'full' => array(
             'weight' => '2',
             'visible' => TRUE,
           ),
