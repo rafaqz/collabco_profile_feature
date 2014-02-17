@@ -91,7 +91,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['empty'] = '<img src="http://innovationnetwork.org.au/sites/alphaiin/files/avatar-blank.jpg" style="height:32px;width:32px;" />';
   $handler->display->display_options['fields']['picture']['image_style'] = 'user_thumb';
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position']['id'] = 'field_business_position';
   $handler->display->display_options['fields']['field_business_position']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position']['field'] = 'field_business_position';
@@ -246,7 +246,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['empty'] = '<img src="http://innovationnetwork.org.au/sites/alphaiin/files/avatar-blank.jpg" style="height:32px;width:32px;" />';
   $handler->display->display_options['fields']['picture']['image_style'] = 'user_thumb';
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position']['id'] = 'field_business_position';
   $handler->display->display_options['fields']['field_business_position']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position']['field'] = 'field_business_position';
@@ -436,7 +436,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['empty'] = '<img src="http://innovationnetwork.org.au/sites/alphaiin/files/avatar-blank.jpg" style="height:32px;width:32px;" />';
   $handler->display->display_options['fields']['picture']['image_style'] = 'user_thumb';
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position']['id'] = 'field_business_position';
   $handler->display->display_options['fields']['field_business_position']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position']['field'] = 'field_business_position';
@@ -559,15 +559,14 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['pid']['table'] = 'profile';
   $handler->display->display_options['fields']['pid']['field'] = 'pid';
   $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position']['id'] = 'field_business_position';
   $handler->display->display_options['fields']['field_business_position']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position']['field'] = 'field_business_position';
-  /* Field: Profile: Areas of Expertise */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_areas_of_expertise']['id'] = 'field_areas_of_expertise';
   $handler->display->display_options['fields']['field_areas_of_expertise']['table'] = 'field_data_field_areas_of_expertise';
   $handler->display->display_options['fields']['field_areas_of_expertise']['field'] = 'field_areas_of_expertise';
-  $handler->display->display_options['fields']['field_areas_of_expertise']['delta_offset'] = '0';
   /* Field: Profile: Personal Bio */
   $handler->display->display_options['fields']['field_personal_bio']['id'] = 'field_personal_bio';
   $handler->display->display_options['fields']['field_personal_bio']['table'] = 'field_data_field_personal_bio';
@@ -617,7 +616,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_first_name']['element_wrapper_type'] = 'h3';
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position']['id'] = 'field_business_position';
   $handler->display->display_options['fields']['field_business_position']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position']['field'] = 'field_business_position';
@@ -714,7 +713,7 @@ function collabco_profile_feature_views_default_views() {
   $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_first_name']['element_wrapper_type'] = 'h3';
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position']['id'] = 'field_business_position';
   $handler->display->display_options['fields']['field_business_position']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position']['field'] = 'field_business_position';
