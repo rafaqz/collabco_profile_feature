@@ -123,3 +123,136 @@ function collabco_profile_feature_views_data_alter(&$data) {
   return $data;
 }
 
+/**
+ * Implements hook_block_info().
+ */
+function collabco_profile_feature_block_info() {
+  $blocks = array(
+    'profile_nav' => array(
+      'info' => t('Profile Nav'),
+    ),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function collabco_profile_feature_block_view($delta='') {
+  switch($delta) {
+    case 'profile_nav' :
+      $block = collabco_profile_feature_build_user_profile_nav_block();
+      return $block;
+  }
+} 
+
+/**
+ * Build a user account block.
+ *
+ * @return array
+ *   A Drupal build array.
+ */
+function collabco_profile_feature_build_user_profile_nav_block() {
+  global $user;
+  // Ignore anonymous.
+  if ($user->uid == 0) {
+    return;
+  }
+
+  // Theme user-name as a link.
+  $themed_username = theme('username', array('account' => $user));
+
+  // Build list of user roles, replace "authenticated user" with "Member"
+  $roles = $user->roles;
+  $roles = array_replace($roles, array_fill_keys(array_keys($roles, 'authenticated user'), 'Member'));
+  $roles_str = implode(', ', $roles);
+  
+  // Build list of user groups.
+  $group_links = collabco_groups_feature_build_user_groups_list();
+  $group_link_array = array(
+    'links' => $group_links,
+    'heading' => array(
+      'text' => t('My Groups'),
+      'level' => 'h6',
+    ),
+    'attributes' => array(
+      'class' => array('links'),
+    ),
+  );
+  $themed_group_links = theme_links($group_link_array);
+
+  // Build user profile block.
+  $block = array();
+  $block['content'] = array(
+    'profile-nav' => array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('profile-nav')),
+      'info' => array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('profile-nav-info')),
+        'account' => array(
+          '#type' => 'container',
+          '#attributes' => array('class' => array('profile-nav-account')),
+          'picture' => array(
+            '#type' => 'markup',
+            '#markup' => theme('user_picture', array('account' =>$user)),
+            '#weight' => -5,
+          ),
+          'account_text' => array(
+            '#type' => 'container',
+            '#attributes' => array('class' => array('profile-nav-account-text')),
+            'name' => array(
+              '#type' => 'markup',
+              '#markup' => $themed_username,
+              '#weight' => -2,
+              '#prefix' => '<h5>',
+              '#suffix' => '</h5>',
+            ),
+            'roles' => array(
+              '#type' => 'markup',
+              '#markup' => $roles_str,
+              '#weight' => -1,
+              '#prefix' => '<span class="profile-nav-roles">',
+              '#suffix' => '</span>',
+            ),
+          ),
+        ),
+        'groups' => array(
+        '#type' => 'container',
+          '#attributes' => array('class' => array('profile-nav-groups')),
+          'links' => array(
+            '#type' => 'markup',
+            '#markup' => $themed_group_links,
+          ),
+        ),
+      ),
+      'actions' => array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('profile-nav-actions')),
+        '#weight' => 2,
+        'edit' => array(
+          '#theme' => 'link',
+          '#text' => "Edit profile",
+          '#path' => "user/{$user->uid}/edit",
+          '#options' => array(
+            'attributes' => array('class' => array('profile-nav-edit')),
+            'html' => TRUE,
+          ),
+          '#weight' => 0,
+        ),
+        'log_out' => array(
+          '#theme' => 'link',
+          '#text' => "Log out",
+          '#path' => "user/logout",
+          '#options' => array(
+            'attributes' => array('class' => array('profile-nav-logout')),
+            'html' => TRUE,
+          ),
+          '#weight' => 1,
+        ),
+      ),
+    ),
+  );
+  return $block;
+} 
+
