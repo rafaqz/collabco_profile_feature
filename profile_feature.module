@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Collabco Profile Feature feature.
+ * Code for the Profile Feature.
  */
 
 include_once 'profile_feature.features.inc';

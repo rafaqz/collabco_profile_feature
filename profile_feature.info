@@ -1,6 +1,6 @@
-name = Collabco Profile Feature
+name = Profile Feature
 core = 7.x
-package = Collabco
+package = Features
 version = unknown
 project = profile_feature
 dependencies[] = ctools
