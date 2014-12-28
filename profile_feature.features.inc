@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * collabco_profile_feature.features.inc
+ * profile_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function collabco_profile_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function profile_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,14 +16,14 @@ function collabco_profile_feature_ctools_plugin_api($module = NULL, $api = NULL)
 /**
  * Implements hook_views_api().
  */
-function collabco_profile_feature_views_api($module = NULL, $api = NULL) {
+function profile_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_default_profile2_type().
  */
-function collabco_profile_feature_default_profile2_type() {
+function profile_feature_default_profile2_type() {
   $items = array();
   $items['profile'] = entity_import('profile2_type', '{
     "userCategory" : true,

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * collabco_profile_feature.features.field_instance.inc
+ * profile_feature.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function collabco_profile_feature_field_default_field_instances() {
+function profile_feature_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'profile2-profile-field_external_link'

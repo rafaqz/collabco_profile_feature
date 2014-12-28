@@ -4,23 +4,23 @@
  * Code for the Collabco Profile Feature feature.
  */
 
-include_once 'collabco_profile_feature.features.inc';
+include_once 'profile_feature.features.inc';
 
 /**
  * Implements hook_preprocess_user_pricture().
  */
-function collabco_profile_feature_preprocess_user_picture(&$variables) {
+function profile_feature_preprocess_user_picture(&$variables) {
   $variables['user_picture'] = '';
   if (variable_get('user_pictures', 0)) {
     $account = $variables['account'];
-    $variables['user_picture'] = collabco_profile_feature_load_user_picture($account);
+    $variables['user_picture'] = profile_feature_load_user_picture($account);
   }
 }
 
 /**
  * Implements hook_preprocess_user_pricture().
  */
-function collabco_profile_feature_load_user_picture($account) {
+function profile_feature_load_user_picture($account) {
   $user_picture = '';
   if (!empty($account->picture)) {
     if (is_numeric($account->picture)) {
@@ -58,7 +58,7 @@ function collabco_profile_feature_load_user_picture($account) {
  * To make it work with views you need to create a new views handler field and extend this handler class
  */
 
-class views_collabco_profile_feature_handler_field_user_picture extends views_handler_field_user_picture {
+class views_profile_feature_handler_field_user_picture extends views_handler_field_user_picture {
 
   function render($values) {
     if ($this->options['image_style'] && module_exists('image')) {
@@ -111,11 +111,11 @@ class views_collabco_profile_feature_handler_field_user_picture extends views_ha
 /**
  * hook_views_data_alter().
  */
-function collabco_profile_feature_views_data_alter(&$data) {
+function profile_feature_views_data_alter(&$data) {
   foreach ($data as $table => $config) {
     foreach ($config as $item => $item_config) {
       if (isset($item_config['field']['handler']) && $item_config['field']['handler'] == 'views_handler_field_user_picture') {
-        $data[$table][$item]['field']['handler'] = 'views_collabco_profile_feature_handler_field_user_picture';
+        $data[$table][$item]['field']['handler'] = 'views_profile_feature_handler_field_user_picture';
       }
     }
   }
@@ -126,7 +126,7 @@ function collabco_profile_feature_views_data_alter(&$data) {
 /**
  * Implements hook_block_info().
  */
-function collabco_profile_feature_block_info() {
+function profile_feature_block_info() {
   $blocks = array(
     'profile_nav' => array(
       'info' => t('Profile Nav'),
@@ -138,10 +138,10 @@ function collabco_profile_feature_block_info() {
 /**
  * Implements hook_block_view().
  */
-function collabco_profile_feature_block_view($delta='') {
+function profile_feature_block_view($delta='') {
   switch($delta) {
     case 'profile_nav' :
-      $block = collabco_profile_feature_build_user_profile_nav_block();
+      $block = profile_feature_build_user_profile_nav_block();
       return $block;
   }
 } 
@@ -152,7 +152,7 @@ function collabco_profile_feature_block_view($delta='') {
  * @return array
  *   A Drupal build array.
  */
-function collabco_profile_feature_build_user_profile_nav_block() {
+function profile_feature_build_user_profile_nav_block() {
   global $user;
   // Ignore anonymous.
   if ($user->uid == 0) {
@@ -168,7 +168,7 @@ function collabco_profile_feature_build_user_profile_nav_block() {
   $roles_str = implode(', ', $roles);
   
   // Build list of user groups.
-  $group_links = collabco_groups_feature_build_user_groups_list();
+  $group_links = groups_feature_build_user_groups_list();
   $group_link_array = array(
     'links' => $group_links,
     'heading' => array(

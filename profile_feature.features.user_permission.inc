@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * collabco_profile_feature.features.user_permission.inc
+ * profile_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function collabco_profile_feature_user_default_permissions() {
+function profile_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'administer profile types'.
